@@ -1,0 +1,44 @@
+@import url(../../../colors.css);
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: var(--navbar-bg-color);
+  padding: 0 100px;
+}
+
+.navbarLogo {
+  height: 100%;
+  color: var(--text-secondary);
+}
+
+.navbarLogoIcon {
+  height: 100%;
+  font-size: 3em;
+}
+
+.navbarLinks {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.navbarLinks a {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.navbarLinks li {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: var(--text-secondary);
+  margin: 0 20px;
+  font-size: 1.2em;
+}

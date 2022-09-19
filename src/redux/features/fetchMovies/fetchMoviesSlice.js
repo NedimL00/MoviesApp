@@ -9,11 +9,13 @@ const initialState = {
 }
 
 export const fetchMovies = createAsyncThunk('movies/fetchMovies', async(text)=>{
+
   try {
     const response = await axios.get('http://www.omdbapi.com/', {
       params: {
         apikey: 'dd117956',
-        s: text,
+        s: text.toLowerCase().split(' ').join('+'),
+        type: 'movie',
       }
     })
 
@@ -35,8 +37,14 @@ export const moviesSlice = createSlice({
       state.status = 'loading';
       })
       .addCase(fetchMovies.fulfilled, (state, action) => {
-        state.status = 'succeeded';
-        state.movies = action.payload;
+        if(action.payload.Response === 'False') {
+          state.status = 'failed'
+          state.error = action.payload.Error;
+        } else {
+          state.status = 'succeeded';
+          state.movies = action.payload;
+        }
+
       })
       .addCase(fetchMovies.rejected, (state, action) => {
         state.status = 'failed'
@@ -45,6 +53,5 @@ export const moviesSlice = createSlice({
   }
 })
 
-/* export const {fetchMovies} = moviesSlice.actions
- */
+
 export default moviesSlice.reducer

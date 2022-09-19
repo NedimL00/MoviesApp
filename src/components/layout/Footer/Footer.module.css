@@ -1,0 +1,8 @@
+@import url(../../../colors.css);
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  height: 60px;
+  background-color: var(--footer-bg-color);
+}

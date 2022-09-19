@@ -1,0 +1,8 @@
+@import url(../../../colors.css);
+
+.movieContainer {
+  margin-top: 30px;
+  padding: 50px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}

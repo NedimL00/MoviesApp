@@ -1,40 +1,33 @@
 import React from 'react'
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Movie from '../../../components/layout/Movie/Movie';
-import { fetchMovies } from './fetchMoviesSlice'; 
+import styles from './Movies.module.css'
 
 function Movies() {
 
   const status = useSelector((state)=>state.fetchMovies.status);
   const movies = useSelector((state)=>state.fetchMovies.movies);
-  const dispatch = useDispatch();
+  const error = useSelector((state)=>state.fetchMovies.error);
 
 
-  useEffect(()=> {
-    dispatch(fetchMovies('Harry'));
-  }, [])
-
-
-    console.log(movies.Search);
+  console.log(movies);
+  console.log(status);
 
  if(status === 'succeeded') {
-return (
-  <div>
-    {movies.Search.map((movie) => 
-      <Movie movie={movie} />
-    )}
-  </div>
-)
-
+  if(movies.Search?.length !== 0) {
+    return (
+      <div className={styles.movieContainer}>
+        {movies.Search.map((movie) => 
+          <Movie key={movie.imdbID} movie={movie} />
+        )}
+      </div>
+    )
+  }
+}  else if (status === 'failed') {
+  return (window.alert(error))
 }
- else {
-  return (
-  <div>
-    noMovies
-  </div>
-  )
- }
+
+
 
 }
 

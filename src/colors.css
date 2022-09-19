@@ -1,12 +1,15 @@
 :root {
   --bg-color: #fff;
   --navbar-bg-color: #E63946;
+  --footer-bg-color: #E63946;
   --form-bg-color: #E63946;
   --text-primary: #000;
   --text-secondary: #fff;
   --btn-primary: #457B9D;
   --btn-secondary: #A8DADC;
   --btn-warning: #E63946;
+  --login-btn: #fff;
+  --registration-btn: #42B72A;
 }
 
 .dark-mode {

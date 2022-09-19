@@ -26,6 +26,17 @@ function Navbar() {
         </ul>
       </div>
     )
+  } else {
+    return (
+      <div className={styles.navbar}>
+        <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
+        <ul className={styles.navbarLinks} >
+          <Link to="/" ><li>Home</li></Link>
+          <Link to="/" ><li>About</li></Link>
+          <Link to="/login" ><li>Login</li></Link>
+        </ul>
+      </div>
+    )
   }
 
 }

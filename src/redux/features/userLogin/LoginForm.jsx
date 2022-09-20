@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../firebase';
-import { async } from '@firebase/util';
 
 
 function LoginForm() {
@@ -22,9 +21,9 @@ function LoginForm() {
   },[])
 
 
-  const handleLogin = async(e) => {
+  const handleLogin = (e) => {
 
-    
+
 
     e.preventDefault();
 

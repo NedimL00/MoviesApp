@@ -16,7 +16,7 @@ function RegisterForm() {
   const [password, setPassword] = useState('');
   
 
-  const handleSubmit = async (e) => {
+  const handleSubmit =(e) => {
     e.preventDefault();
 
     createUserWithEmailAndPassword(auth, email, password)

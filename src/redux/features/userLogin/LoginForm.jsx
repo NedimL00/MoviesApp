@@ -18,11 +18,14 @@ function LoginForm() {
   const navigate = useNavigate();
   
   useEffect(()=>{
-    document.title = 'Login'
+    document.title = 'Login';
   },[])
 
 
   const handleLogin = async(e) => {
+
+    
+
     e.preventDefault();
 
     signInWithEmailAndPassword(auth, email, password)
@@ -32,16 +35,15 @@ function LoginForm() {
             uid: userAuth.user.uid,
             displayName: userAuth.user.displayName
           }))  
-          console.log(userAuth)
+          navigate('/')
       })
       .catch((err)=>{
-        console.log(err)
+        alert(err)
       })
   }
 
   const routeChange = () => {
-    const path = '/register';
-    navigate(path);
+    navigate('/register');
   }
 
 

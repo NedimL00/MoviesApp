@@ -4,10 +4,15 @@ import { SiThemoviedatabase } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser } from '../../../redux/features/userLogin/loginUserSlice';
+import { auth } from '../../../firebase';
 
 function Navbar() {
-
+  const dispatch = useDispatch();
   const user = useSelector(selectUser);
+  const handleLogout = () => {
+    dispatch(logout());
+    auth.signOut();
+  }
 
   if (user) {
     return (
@@ -16,13 +21,9 @@ function Navbar() {
         <ul className={styles.navbarLinks} >
           <Link to="/" ><li>Home</li></Link>
           <Link to="/" ><li>About</li></Link>
-          <li>
-            <ul>
             <li>{user.displayName}</li>
             <li>Dashboard</li>
-            <li>Logout</li>
-            </ul>
-          </li>
+            <li onClick={handleLogout}>Logout</li>
         </ul>
       </div>
     )

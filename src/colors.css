@@ -1,9 +1,9 @@
 :root {
-  --bg-color: #fff;
-  --navbar-bg-color: #E63946;
-  --footer-bg-color: #E63946;
+  --bg-color: #333;
+  --navbar-bg-color: rgba(51,51,51,0.5);
+  --footer-bg-color: rgba(51,51,51,1);
   --form-bg-color: #E63946;
-  --text-primary: #000;
+  --text-primary: #fff;
   --text-secondary: #fff;
   --btn-primary: #457B9D;
   --btn-secondary: #A8DADC;

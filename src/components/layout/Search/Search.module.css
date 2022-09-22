@@ -1,36 +1,40 @@
 @import url(../../../colors.css);
 
 .searchBox {
+  position: sticky;
+  top: 100px;
   margin: 5em auto;
-  height: 10em;
-  width: 50%;
+  height: 5em;
+  width: 30%;
   background-color: var(--bg-color);
-
+  border-radius: 10px;
 }
 .searchForm {
+  margin: 0 auto;
   padding: 20px 0;
   height: 100%;
-  width: 90%;
+  width: 100%;
   background-color: var(--btn-warning);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
+  border-radius: 10px;
 }
 .searchForm > input {
   height: 4em;
   width: 70%;
   text-align: center;
   font: 700 1em sans-serif;
+  border-radius: 10px;
 }
 .searchForm > button {
   padding: 1em;
-  border-radius: 10px;
   margin: 10px;
   background-color: var(--login-btn);
   font: 1em sans-serif;
   font-weight: 700;
+  border-radius: 10px;
 }

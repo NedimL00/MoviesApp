@@ -1,20 +1,21 @@
 :root {
-  --bg-color: #333;
-  --navbar-bg-color: rgba(51,51,51,0.5);
+  --bg-color: #fff;
+  --navbar-bg-color: rgba(51,51,51,0.9);
   --footer-bg-color: rgba(51,51,51,1);
   --form-bg-color: #E63946;
   --text-primary: #fff;
-  --text-secondary: #fff;
+  --text-secondary: #000;
   --btn-primary: #457B9D;
   --btn-secondary: #A8DADC;
   --btn-warning: #E63946;
   --login-btn: #fff;
   --registration-btn: #42B72A;
+  --bg-image: url('./components/assets/Background/background-image.jpg')
 }
 
 .dark-mode {
   --bg-color:#333;
   --text-primary: #fff;
-  --text-secondary: #000;
-  transition: all .5s;
+  --text-secondary: #fff;
+  transition: all .2s;
 }

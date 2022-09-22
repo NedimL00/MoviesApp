@@ -8,12 +8,26 @@ import { useEffect } from 'react';
 import { auth, onAuthStateChanged } from './firebase';
 import { useDispatch } from 'react-redux';
 import { login, logout } from './redux/features/userLogin/loginUserSlice'
+import Dashboard from './pages/Dashboard';
+import MovieInfo from './components/layout/MovieInfo/MovieInfo';
 
 function App() {
   
 
   const dispatch = useDispatch();
 
+  useEffect(()=> {
+    function detectColorScheme(){
+      if(!window.matchMedia) {
+        return false;
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.body.classList.add("dark-mode");
+      }
+
+    }
+
+    detectColorScheme();
+  },[])
 
 
   useEffect(()=> {
@@ -30,6 +44,7 @@ function App() {
         dispatch(logout())
       }
     })
+    
   }, [])
 
 
@@ -40,6 +55,8 @@ function App() {
           <Route path='/about' element={<About/>} />
           <Route path='/login' element={<Login/>} />
           <Route path='/register' element={<RegisterForm />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/movie/:movieID' element={<MovieInfo />} />
         </Routes>
     </BrowserRouter>
   );

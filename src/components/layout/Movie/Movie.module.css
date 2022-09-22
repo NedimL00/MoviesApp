@@ -19,15 +19,17 @@
   background-color: var(--btn-warning);
   min-height: 500px;
   max-height: 500px;
+  box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
 }
 
 .movieBox > img {
-  
   max-height: 400px;
 }
 .movieInfo {
   margin-top: 10px;
   padding: 10px;
-  color: var(--text-secondary);
+  color: var(--text-primary);
   overflow-y: auto;
 }

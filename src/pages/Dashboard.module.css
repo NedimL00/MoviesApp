@@ -1,0 +1,8 @@
+@import url(../colors.css);
+
+.profilePage {
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

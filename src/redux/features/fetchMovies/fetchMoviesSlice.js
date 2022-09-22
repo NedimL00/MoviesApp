@@ -53,5 +53,7 @@ export const moviesSlice = createSlice({
   }
 })
 
-
+export const selectMovies = (state) => state.fetchMovies.movies.Search;
+export const getMoviesStatus = (state) => state.fetchMovies.status;
+export const getError = (state) => state.fetchMovies.error;
 export default moviesSlice.reducer

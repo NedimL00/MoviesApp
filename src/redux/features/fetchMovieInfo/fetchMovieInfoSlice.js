@@ -11,7 +11,7 @@ const initialState = {
 export const fetchMovieInfo = createAsyncThunk('movies/fetchMovieInfo', async(id)=>{
 
   try {
-    const response = await axios.get('http://www.omdbapi.com/', {
+    const response = await axios.get('https://www.omdbapi.com/', {
       params: {
         apikey: 'dd117956',
         i: id,

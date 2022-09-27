@@ -21,6 +21,9 @@ function Movies() {
       </div>
     )
   }
+  else {
+    console.log("Waiting...")
+  }
 }  else if (status === 'failed') {
   return (window.alert(error))
 }

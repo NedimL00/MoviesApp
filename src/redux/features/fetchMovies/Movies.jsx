@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import Spinner from '../../../components/assets/Spinner';
 import Movie from '../../../components/layout/Movie/Movie';
 import { getError, getMoviesStatus, selectMovies } from './fetchMoviesSlice';
 import styles from './Movies.module.css'
@@ -10,8 +11,12 @@ function Movies() {
   const movies = useSelector(selectMovies);
   const error = useSelector(getError);
 
+  console.log(status)
 
- if(status === 'succeeded') {
+  if(status === 'loading') {
+    return <Spinner/>
+  }
+ else if(status === 'succeeded') {
   if(movies.length !== 0) {
     return (
       <div className={styles.movieContainer}>
@@ -21,14 +26,10 @@ function Movies() {
       </div>
     )
   }
-  else {
-    console.log("Waiting...")
-  }
+
 }  else if (status === 'failed') {
   return (window.alert(error))
 }
-
-
 
 }
 

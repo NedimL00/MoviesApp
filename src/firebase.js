@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import {getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth';
+import {getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider} from 'firebase/auth';
 
 
 const firebaseConfig = {
@@ -23,5 +23,7 @@ export {
   updateProfile,
   onAuthStateChanged,
   signInWithEmailAndPassword,
-  signOut
+  signOut,
+  signInWithPopup,
+  GoogleAuthProvider,
   }

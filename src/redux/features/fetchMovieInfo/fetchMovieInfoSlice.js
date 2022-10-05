@@ -53,5 +53,5 @@ export const movieInfoSlice = createSlice({
   }
 })
 
-
+export const selectMovieById = (state)=>state.movie
 export default movieInfoSlice.reducer

@@ -4,29 +4,51 @@ import Navbar from '../components/layout/Navbar/Navbar';
 import Footer from '../components/layout/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Search from '../components/layout/Search/Search';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../redux/features/userLogin/loginUserSlice'
+import { fetchMovieInfo } from '../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
+import { selectMovieByID } from '../components/layout/MovieInfo/MovieInfo';
+import {AiFillPlayCircle} from 'react-icons/ai';
+import {FaImdb} from 'react-icons/fa';
 
 function Home() {
 
+  const dispatch = useDispatch(fetchMovieInfo);
+  const movie = useSelector(selectMovieByID);
   const user = useSelector(selectUser);
-  console.log(user)
+  const movieID = 'tt0816692'
 
   useEffect(()=>{
-    document.title = 'Home'
+    document.title = 'Home';
+    dispatch(fetchMovieInfo(movieID))
   },[])
+  console.log(movie);
+
+
 
   if(user) {
     return (
       <>
       <Navbar />
       <div className='container'>
+        <div className='frontPageMoviePoster'>
+          <div className='frontPageMovieData'>
+            <p className='frontPageRating'>{movie.imdbRating}/10 <FaImdb className='ratingIcon'/></p>
+            <h1 className='frontPageTitle'>{movie.Title}</h1>
+            <p className='frontPageGenre'>{movie.Genre}</p>
+            <a className='netflixBtn' target="_blank" href="https://www.netflix.com/ba/title/70305903"><AiFillPlayCircle className='playIcon' />Watch Now</a>
+            <p className='frontPagePlot'>{movie.Plot}</p>
+          </div>
+        </div>
+
+
         <Search/>
         <Movies/>
       </div>
       <Footer/>
       </>
-    )
+    )      
+
   } else {
     return (
       <>

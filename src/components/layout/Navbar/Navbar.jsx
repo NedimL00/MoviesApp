@@ -18,6 +18,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
+
   const handleLogout = () => {
     dispatch(logout());
     auth.signOut();

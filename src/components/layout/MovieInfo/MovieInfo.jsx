@@ -5,15 +5,13 @@ import { useParams } from 'react-router-dom'
 import { fetchMovieInfo } from '../../../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
-import styles from './MovieInfo.module.css'
+import styles from './MovieInfo.module.css';
 
 function MovieInfo() {
 
   const {movieID} = useParams();
   const dispatch = useDispatch();
   const movie = useSelector(selectMovieByID);
-  console.log(movie)
-
 
   useEffect(()=>{
     window.scrollTo(0, 0);
@@ -23,10 +21,11 @@ function MovieInfo() {
   return (
     <>
       <Navbar/>
+      { movie && (
       <div className='container'>
         <div className={styles.moviePage}>
             <div className={styles.info}>
-              <img className={styles.moviePoster} src={movie.Poster} />
+              <img className={styles.moviePoster} src={movie?.Poster} />
               <div className={styles.rightSide}>
                 <div className={styles.heading}>
                   <h1>{movie.Title}</h1>
@@ -44,12 +43,9 @@ function MovieInfo() {
                 
                  
               <div className={styles.Ratings}>
-                {movie.Ratings.map((rating)=>{
-                return (
-                <h2>
-                  {rating.Source}: {rating.Value}
-                </h2>
-                )
+                {movie.Ratings?.map((rating, count)=>{
+                  count++;
+                  return <h1 key={count}>{rating.Value}</h1>
                 })}
               </div>                
               </div>
@@ -58,6 +54,7 @@ function MovieInfo() {
           
         </div>
       </div>
+)}
       <Footer/>
     </>
 

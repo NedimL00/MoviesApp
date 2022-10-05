@@ -10,7 +10,9 @@
   --btn-warning: #E63946;
   --login-btn: #fff;
   --registration-btn: #42B72A;
-  --bg-image: url('./components/assets/Background/background-image.jpg')
+  --clr-gold: #ffc45e;
+  --clr-gray: #81807f;
+  --clr-white: #e8e8e8;
 }
 
 .dark-mode {

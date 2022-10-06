@@ -1,12 +1,22 @@
 @import url(../../../colors.css);
 
 .movieLink {
+  width: 320px;
+  text-transform: uppercase;
+}
+.movieLink img {
   width: 300px;
+  height: 500px;
 }
 .movieLink:hover {
   cursor: pointer;
   scale: 1.01;
 }
+
+.movieLink:hover h1 {
+color: var(--clr-gold);
+}
+
 .movieLink:active {
   scale: 0.99;
 }
@@ -16,20 +26,20 @@
   margin: 30px 0;
   display: flex;
   flex-direction: column;
-  background-color: var(--btn-warning);
-  min-height: 500px;
-  max-height: 500px;
+  background-color: var(--clr-black);
   box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
   -webkit-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
   -moz-box-shadow: 10px 10px 38px 3px rgba(0,0,0,0.75);
 }
 
-.movieBox > img {
-  max-height: 400px;
-}
 .movieInfo {
   margin-top: 10px;
   padding: 10px;
   color: var(--text-primary);
-  overflow-y: auto;
 }
+.movieTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+

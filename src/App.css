@@ -50,6 +50,8 @@ ul, li, a, button, input {
 .container {
   min-height: 100vh;
   width: 100%;
+  background-color: var(--bg-color);
+  padding-top: 100px;
 }
 
 .notLoggedIn {
@@ -65,7 +67,8 @@ ul, li, a, button, input {
 }
 
 .frontPageMoviePoster {
-  background-image: url('./components/assets/Interstellar.jpg');
+  margin-top: -100px;
+  background-image: var(--poster-image);
   background-size: cover;
   background-position: left;
   height: 100vh;
@@ -80,7 +83,7 @@ ul, li, a, button, input {
   padding: 5em;
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .frontPageRating {
   color: var(--clr-gold);
@@ -119,11 +122,11 @@ fill: var(--clr-gold);
 height: 100%;
 align-items: center;
 margin-right: 10px;
-
 }
 
 .frontPagePlot {
 min-width: 300px;
 width: 500px;
 font-weight: 300;
+overflow: hidden;
 }

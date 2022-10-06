@@ -1,8 +1,125 @@
 @import url(../colors.css);
 
-.profilePage {
-  color: var(--text-secondary);
+.dashboard {
+  margin-inline: auto;
+  height: 600px;
+  width: 80vw;
+  background-color: #fff;
+  border-radius: 25px;
+  color: var(--clr-black);
+  display: flex;
+}
+
+.leftSide {
+  margin: 2rem 2rem;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.leftProfile {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftProfile img {
+  border-radius: 999px;
+  margin-bottom: 5px;
+}
+
+.leftProfile span {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--clr-gray);
+}
+
+.leftSideLinks {
+  margin: 2rem 0;
+  font-size: 0.8rem;
+}
+
+.leftSideLinks ul li:hover {
+  cursor: pointer;
+}
+
+.listIcons {
+  margin-right: 10px;
+  vertical-align: middle;
+}
+.logout {
+  font-weight: 700;
+  font-size: 1rem;
+}
+.logout:hover {
+  cursor: pointer;
+}
+
+.rightSide {
+  padding: 20px;
+  height: 100%;
+  width: 80%;
+  background-color: #F3F1EF;
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  column-gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.rightSide h3 {
+  font-size: 1rem;
+}
+
+
+.likedMovies {
+  color: var(--clr-gold);
+  padding: 10px;
+  height: 300px;
+  width: 100%;
+  background-color: var(--clr-darkBlue);
+  border-radius: 10px;
+}
+.watchLater {
+  color: var(--clr-darkBlue);
+  padding: 10px;
+  height: 300px;
+  width: 100%;
+  background-color: var(--clr-lightBlue);
+  border-radius: 10px;
+}
+
+
+.engagementCard {
+  color: var(--clr-darkBlue);
+  padding: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  width: 100%;
+  height: 90%;
+  background-color: var(--clr-beige);
+  border-radius: 10px;
+}
+.likedMoviesFrame {
+  width: 100%;
+  height: 90%;
+  overflow: auto;
+}
+
+.likedMovieCard {
+  width: 90%;
+  height: 56px;
+  background-color: var(--clr-white);
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: var(--clr-darkBlue);
 }
+.likedMovieCard span {
+  font-size: 0.8rem;
+}
+

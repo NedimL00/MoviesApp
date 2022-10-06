@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom';
 import Search from '../components/layout/Search/Search';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUser } from '../redux/features/userLogin/loginUserSlice'
-import { fetchMovieInfo } from '../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
-import { selectMovieByID } from '../components/layout/MovieInfo/MovieInfo';
+import { fetchMovieInfo, selectMovieByID } from '../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
 import {AiFillPlayCircle} from 'react-icons/ai';
 import {FaImdb} from 'react-icons/fa';
 
@@ -20,16 +19,16 @@ function Home() {
 
   useEffect(()=>{
     document.title = 'Home';
-    dispatch(fetchMovieInfo(movieID))
+    dispatch(fetchMovieInfo(movieID));
   },[])
   console.log(movie);
 
+  
 
-
-  if(user) {
     return (
       <>
       <Navbar />
+
       <div className='container'>
         <div className='frontPageMoviePoster'>
           <div className='frontPageMovieData'>
@@ -40,26 +39,18 @@ function Home() {
             <p className='frontPagePlot'>{movie.Plot}</p>
           </div>
         </div>
+        {!user && 
+          <div className='notLoggedIn'>
+            <p>Please <span><Link className='loginLinkHome' to="/login">Log in</Link></span> to search movie database</p>
+          </div>
+        }
 
-
-        <Search/>
+        {user && <Search/>}
         <Movies/>
       </div>
       <Footer/>
       </>
-    )      
-
-  } else {
-    return (
-      <>
-      <Navbar />
-      <div className='notLoggedIn'>
-        <p>Please <span><Link className='loginLinkHome' to="/login">Log in</Link></span> to search movie database</p>
-      </div>
-      <Footer/>
-      </>
-    )
-  }
+    ) 
 
 }
 

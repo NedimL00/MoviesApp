@@ -45,13 +45,15 @@ function LoginForm() {
         dispatch(login({
           email: userAuth.user.email,
           uid: userAuth.user.uid,
-          displayName: userAuth.user.displayName
+          displayName: userAuth.user.displayName,
+          photoUrl: userAuth.user.photoURL,
         }))
       }) .catch ((err)=>{
         const errorCode = err.code;
         const errorMessage=err.message;
         const email = err.customData?.email;
         const credential = googleProvider.credentialFromError(err);
+        console.log(errorCode, errorMessage, email, credential);
       })
   }
 
@@ -62,15 +64,22 @@ function LoginForm() {
 
   return (
     <div className='container'>
-      <div className={styles.loginFormWrapper}>
-        <form className={styles.loginForm} onSubmit={(e)=>handleLogin(e)}>
-          <input type='text' placeholder='e-mail' onChange={(e)=>setEmail(e.target.value)} />
-          <input type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)} />
-          <button type='submit' className={styles.loginButton} >Log In To Movies App</button>
-          <button type='button' className={styles.loginButton} onClick={handleGoogleLogin} >Or sign in with google</button>
-          <hr/>
-          <button type='button' className={styles.registerButton} onClick={routeChange} >Register Here</button>
-        </form>
+      <div className={styles.flexBox}>
+        <div className={styles.loginFormWrapper}>
+          <form className={styles.loginForm} onSubmit={(e)=>handleLogin(e)}>
+            <input type='text' placeholder='e-mail' onChange={(e)=>setEmail(e.target.value)} />
+            <input type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)} />
+            <button type='submit' className={styles.loginButton} >Log In To Movies App</button>
+            <button type='button' className={styles.loginButton} onClick={handleGoogleLogin} >Or sign in with google</button>
+            <hr/>
+            <button type='button' className={styles.registerButton} onClick={routeChange} >Register Here</button>
+          </form>
+        </div>        
+      
+
+        <div className={styles.rightSideForm}>
+
+        </div>
       </div>
     </div>
 

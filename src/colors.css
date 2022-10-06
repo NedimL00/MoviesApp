@@ -1,6 +1,6 @@
 :root {
-  --bg-color: #fff;
-  --navbar-bg-color: rgba(51,51,51,0.9);
+  --bg-color:#0F1322;
+    --navbar-bg-color: rgba(51,51,51,0.9);
   --footer-bg-color: rgba(51,51,51,1);
   --form-bg-color: #E63946;
   --text-primary: #fff;
@@ -10,14 +10,23 @@
   --btn-warning: #E63946;
   --login-btn: #fff;
   --registration-btn: #42B72A;
+
+
   --clr-gold: #ffc45e;
   --clr-gray: #81807f;
   --clr-white: #e8e8e8;
+  --clr-black: #050505;
+  --clr-darkBlue: #0F1322;
+  --clr-lightBlue: #95CFD9;
+  --clr-beige: #DABDA9;
+
+
+  --poster-image: url('./components/assets/Interstellar.jpg');
 }
 
 .dark-mode {
-  --bg-color:#333;
+
   --text-primary: #fff;
-  --text-secondary: #fff;
+  --text-secondary: #fff;  
   transition: all .2s;
 }

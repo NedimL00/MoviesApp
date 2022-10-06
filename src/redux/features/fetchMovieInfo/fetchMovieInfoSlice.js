@@ -10,7 +10,6 @@ const initialState = {
 
 export const fetchMovieInfo = createAsyncThunk('movies/fetchMovieInfo', async(id)=>{
 
-  try {
     const response = await axios.get('https://www.omdbapi.com/', {
       params: {
         apikey: 'dd117956',
@@ -18,19 +17,21 @@ export const fetchMovieInfo = createAsyncThunk('movies/fetchMovieInfo', async(id
         plot: 'full',
       }
     })
+    .catch((err)=>err.message)
 
-    return response.data;
+    return response.data
 
-  } catch (err) {
-    return err.message
-  }
-  
 })
 
 
 export const movieInfoSlice = createSlice({
   name: 'fetchMovieInfo',
   initialState,
+  reducers: {
+    clearMovieState:(state) => {
+      state = {};
+    }
+  },
   extraReducers(builder) {
     builder 
       .addCase(fetchMovieInfo.pending, (state) => {
@@ -53,5 +54,8 @@ export const movieInfoSlice = createSlice({
   }
 })
 
-export const selectMovieById = (state)=>state.movie
-export default movieInfoSlice.reducer
+export const {clearMovieState} = movieInfoSlice.actions;
+export const selectMovieByID = (state) => state.fetchMovieInfo.movie;
+
+export const selectMovieById = (state)=>state.movie;
+export default movieInfoSlice.reducer;

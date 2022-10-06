@@ -1,7 +1,9 @@
 @import url(../../../colors.css);
 
+
 .moviePage {
-  color: var(--text-secondary);
+  margin: 200px;
+  color: var(--clr-white);
   margin: 30px auto;
   width: 1400px;
   padding: 0 100px;

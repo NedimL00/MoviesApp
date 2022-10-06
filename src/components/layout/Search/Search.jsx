@@ -22,7 +22,7 @@ function Search() {
 
   return (
     <div className={styles.searchBox}>
-      <form className={styles.searchForm} onSubmit={(e)=>handleSearch(e)}>
+      <form id='searchForm' className={styles.searchForm} onSubmit={(e)=>handleSearch(e)}>
         <input value={text} type='text' placeholder='Enter movie title to search' onChange={(e)=>setText(e.target.value)} />
         <button>Search</button>
       </form>      

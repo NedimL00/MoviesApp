@@ -11,7 +11,7 @@ function Movies() {
   const movies = useSelector(selectMovies);
   const error = useSelector(getError);
 
-  console.log(status)
+  console.log(movies)
 
   if(status === 'loading') {
     return <Spinner/>

@@ -13,6 +13,7 @@ function Navbar() {
 
   const [clicked, setClicked] = useState(true);
   const [dark, setDark] = useState(false);
+  const [style, setStyle] = useState();
 
 
   const dispatch = useDispatch();
@@ -23,37 +24,49 @@ function Navbar() {
     dispatch(logout());
     auth.signOut();
   }
+  const handleScroll = () => {
+    if(window.scrollY > 20) {
+      setStyle({backgroundColor:"var(--bg-color)"});
+    } else {
+      setStyle()
+    }
+  }
   
   useEffect(()=>{
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setDark(true);
     }
+
+    window.addEventListener('scroll', handleScroll);
+    return ()=> {
+      window.removeEventListener('scroll', handleScroll)
+    }
   },[])
-
-
-
-
 
   const handleTheme = ()=>{
     document.body.classList.toggle("dark-mode");
     setDark(!dark);
   } 
 
+  const scrollToSearch = ()=>{
+    document.getElementById("searchForm").scrollIntoView({block: "center"});
+  }
+
 
   if (user) {
     return (
-      <header className={styles.navbar}>
+      <header style={style} className={`${styles.navbar}`}>
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
         <ul className={styles.navbarLinks} >
 
           <li>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</li>
           <Link to="/" ><li>Home</li></Link>
-          <Link to="/" ><li>About</li></Link>
+          <li onClick={scrollToSearch}>Search</li>
           <li onClick={()=>setClicked(!clicked)}>
-            {user.displayName}
+            {user?.displayName.split(' ')[0]}
             {clicked ? <IoMdArrowDropleft/> : <IoMdArrowDropdown/> }
           </li>
-          <ul className={!clicked ? styles.accountNameDropdown : styles.accountNameDropdownHidden } >
+          <ul style={style} className={!clicked ? styles.accountNameDropdown : styles.accountNameDropdownHidden } >
               <Link to='/dashboard'><li>Dashboard</li></Link>
               <li onClick={handleLogout}>Logout</li>
           </ul>

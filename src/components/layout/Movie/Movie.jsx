@@ -10,7 +10,7 @@ function Movie({movie}) {
       <div className={styles.movieBox}>
         <img src={movie.Poster} />
         <div className={styles.movieInfo}>
-          <h2 className={styles.movieTitle} title={movie.Title}>{movie.Title}</h2>
+          <h3 className={styles.movieTitle} title={movie.Title}>{movie.Title}</h3>
           <span></span>
         </div>
       </div>

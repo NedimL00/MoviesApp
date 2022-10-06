@@ -19,6 +19,7 @@
   --clr-darkBlue: #0F1322;
   --clr-lightBlue: #95CFD9;
   --clr-beige: #DABDA9;
+  --clr-blue: #3C4F76;
 
 
   --poster-image: url('./components/assets/Interstellar.jpg');
@@ -26,7 +27,5 @@
 
 .dark-mode {
 
-  --text-primary: #fff;
-  --text-secondary: #fff;  
   transition: all .2s;
 }

@@ -23,14 +23,20 @@
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1rem;
+  padding: 0.8rem;
   width: 80px;
   height: 56px;
   background-color: var(--clr-white);
+  border: 2px solid var(--clr-gold);
   font: 1rem sans-serif;
   font-weight: 700;
   border-radius: 16px;
 }
 .searchForm > button:hover {
   background-color: var(--clr-gold);
+}
+
+.searchForm > input:focus {
+  padding: 1.4rem;
+  border: 3px solid var(--clr-gold);
 }

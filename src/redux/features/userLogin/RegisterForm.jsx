@@ -42,18 +42,18 @@ function RegisterForm() {
   
   return (
       <>
-        <Navbar />
         <div className='container'>
-          <div className={styles.registerFormWrapper}>
-            <form className={styles.registerForm} onSubmit={(e)=>handleSubmit(e)}>
-              <input type='text' placeholder='name' onChange={(e)=>setName(e.target.value)} />
-              <input type='text' placeholder='e-mail' onChange={(e)=>setEmail(e.target.value)} />
-              <input type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)} />
-              <button className={styles.registerButton} type='submit' >Create an account</button>
+          <div className={styles.loginFormWrapper}>
+            <form className={styles.loginForm} onSubmit={(e)=>handleSubmit(e)}>
+              <input className={styles.input} type='email' onChange={(e)=>setEmail(e.target.value)} />
+              <label className={styles.label} htmlFor="email">Email</label>
+              <input className={styles.input} type='password' onChange={(e)=>setPassword(e.target.value)} />
+              <label className={styles.label} htmlFor="password">Password</label>
+              <hr className={styles.decorationLine}/>
+              <button type='button' className={`${styles.button} ${styles.loginButton}`} >Register Your Account</button>
             </form>
           </div>
         </div>
-        <Footer />
       </>
   )
 }

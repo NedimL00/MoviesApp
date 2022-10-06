@@ -15,13 +15,13 @@ function MovieInfo() {
 
   useEffect(()=>{
     dispatch(clearMovieState())
+    console.log(movie)
     window.scrollTo(0, 0);
     dispatch(fetchMovieInfo(movieID));
   },[movieID])
 
   return (
     <>
-    <Navbar/>
     <div className={'container'}>
       { movie && (
         <div className={styles.moviePage}>
@@ -57,7 +57,6 @@ function MovieInfo() {
       
 )}
 </div>
-      <Footer/>
     </>
 
   )

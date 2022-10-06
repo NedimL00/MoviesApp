@@ -1,6 +1,4 @@
 import React, { useEffect } from 'react'
-import Navbar from '../components/layout/Navbar/Navbar'
-import Footer from '../components/layout/Footer/Footer'
 import { useDispatch, useSelector } from 'react-redux'
 import { logout, selectUser } from '../redux/features/userLogin/loginUserSlice'
 import styles from './Dashboard.module.css'
@@ -8,6 +6,7 @@ import {FaHome} from 'react-icons/fa'
 import {GrGroup, GrUserSettings} from 'react-icons/gr'
 import { useNavigate } from 'react-router-dom'
 import { auth } from '../firebase'
+import Spinner from '../components/assets/Spinner'
 
 function Dashboard() {
 
@@ -33,7 +32,6 @@ function Dashboard() {
   if(user !== null) {
     return (
       <>
-        <Navbar />
           <div className='container'>
             <div className={styles.dashboard}>
               <div className={styles.leftSide}>
@@ -90,18 +88,13 @@ function Dashboard() {
               </div>
             </div>
           </div>
-        <Footer />
       </>
   
     )
   } else{
+      return <Spinner />
 
-    setTimeout(()=>{
-      navigate('/')
-    },5000)
-    return <h2>You are not logged in, redirecting you to homepage</h2>
-  }
-
+}
 }
 
 export default Dashboard

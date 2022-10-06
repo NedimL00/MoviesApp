@@ -6,9 +6,7 @@ import Footer from '../components/layout/Footer/Footer';
 function Login() {
   return (
     <>
-    <Navbar />
     <LoginForm/>
-    <Footer/>
     </>
     )
 }

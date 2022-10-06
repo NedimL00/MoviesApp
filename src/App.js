@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { login, logout } from './redux/features/userLogin/loginUserSlice'
 import Dashboard from './pages/Dashboard';
 import MovieInfo from './components/layout/MovieInfo/MovieInfo';
+import Navbar from './components/layout/Navbar/Navbar';
 
 function App() {
   
@@ -49,7 +50,9 @@ function App() {
 
 
   return (
-    <BrowserRouter>
+
+    <BrowserRouter> 
+    <Navbar/>
         <Routes>
           <Route path='/' element={<Home/>} />
           <Route path='/about' element={<About/>} />
@@ -59,6 +62,7 @@ function App() {
           <Route path='/movie/:movieID' element={<MovieInfo />} />
         </Routes>
     </BrowserRouter>
+
   );
 }
 

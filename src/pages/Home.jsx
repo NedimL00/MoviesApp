@@ -27,8 +27,6 @@ function Home() {
 
     return (
       <>
-      <Navbar />
-
       <div className='container'>
         <div className='frontPageMoviePoster'>
           <div className='frontPageMovieData'>

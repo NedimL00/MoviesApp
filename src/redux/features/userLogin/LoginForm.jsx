@@ -6,6 +6,7 @@ import styles from './LoginForm.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { auth,signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from '../../../firebase';
+import {FcGoogle} from 'react-icons/fc'
 
 
 function LoginForm() {
@@ -66,19 +67,25 @@ function LoginForm() {
     <div className='container'>
       <div className={styles.flexBox}>
         <div className={styles.loginFormWrapper}>
+          <h2>Hello Again!</h2>
           <form className={styles.loginForm} onSubmit={(e)=>handleLogin(e)}>
-            <input type='text' placeholder='e-mail' onChange={(e)=>setEmail(e.target.value)} />
-            <input type='password' placeholder='password' onChange={(e)=>setPassword(e.target.value)} />
-            <button type='submit' className={styles.loginButton} >Log In To Movies App</button>
-            <button type='button' className={styles.loginButton} onClick={handleGoogleLogin} >Or sign in with google</button>
-            <hr/>
-            <button type='button' className={styles.registerButton} onClick={routeChange} >Register Here</button>
+            <input className={styles.input} type='email' onChange={(e)=>setEmail(e.target.value)} />
+            <label className={styles.label} htmlFor="email">Email</label>
+            <input className={styles.input} type='password' onChange={(e)=>setPassword(e.target.value)} />
+            <label className={styles.label} htmlFor="password">Password</label>
+            <button type='submit' className={`${styles.button} ${styles.loginButton}`} >Log In To Movies App</button>
+            <span className={styles.btnSpan}>or</span>
+            <hr className={styles.decorationLine}/>
+            <button type='button' className={`${styles.button} ${styles.loginButton}`} onClick={handleGoogleLogin} ><FcGoogle className={styles.icon}/> Sign in with Google</button>
+            <span className={styles.btnSpan}>If you don't have an account</span>
+            <hr className={styles.decorationLine}/>
+            <button type='button' className={`${styles.button} ${styles.registerButton}`} onClick={routeChange} >Register Here</button>
           </form>
         </div>        
       
 
         <div className={styles.rightSideForm}>
-
+          <img src="https://preview.redd.it/yg9wd8fj9yp41.jpg?auto=webp&s=865e4dc3c5ddc992b03963ace1fe261d9b22a96a"/>
         </div>
       </div>
     </div>

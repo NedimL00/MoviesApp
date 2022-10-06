@@ -1,7 +1,7 @@
 @import url(../../../colors.css);
 
 .navbar {
-  position: fixed;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;

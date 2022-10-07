@@ -1,9 +1,10 @@
 @import url(../colors.css);
 
 .dashboard {
+  position: relative;
   margin-inline: auto;
   height: 600px;
-  width: 80vw;
+  width: min(80vw,900px);
   background-color: #fff;
   border-radius: 25px;
   color: var(--clr-black);
@@ -11,7 +12,7 @@
 }
 
 .leftSide {
-  margin: 2rem 2rem;
+  margin: 2rem 1rem;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -37,7 +38,7 @@
 
 .leftSideLinks {
   margin: 2rem 0;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .leftSideLinks ul li:hover {
@@ -57,6 +58,9 @@
 }
 
 .rightSide {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 20px;
   height: 100%;
   width: 80%;
@@ -123,3 +127,57 @@
   font-size: 0.8rem;
 }
 
+
+@media only screen and (max-width: 790px) {
+  .dashboard{
+    flex-direction: column;
+    height: 100%;
+  }
+  .leftSide {
+    flex-direction: row;
+    align-items: center;
+    height: 20%;
+    margin: 1rem;
+  }
+  .leftSide h3{
+   display: none;
+  }
+  .leftProfile {
+    margin-top: 0;
+  }
+  .rightSide {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .likedMovies {
+    height: 220px;
+    padding-bottom: 15px;
+  }
+  .watchLater{
+    height: 300px;
+  }
+  .engagementCard {
+    height: 200px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 790px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 1180px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1450px) {
+
+}
+@media only screen and (min-width: 1800px) {
+
+}

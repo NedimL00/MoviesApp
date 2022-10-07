@@ -42,9 +42,11 @@ function Home() {
             <p>Please <span><Link className='loginLinkHome' to="/login">Log in</Link></span> to search movie database</p>
           </div>
         }
+        <div className='moviesSection'>
+          {user && <Search/>}
+          <Movies/>
+        </div>
 
-        {user && <Search/>}
-        <Movies/>
       </div>
       <Footer/>
       </>

@@ -49,7 +49,7 @@ function Navbar() {
   } 
 
   const scrollToSearch = ()=>{
-    document.getElementById("searchForm").scrollIntoView({block: "center"});
+    document.getElementById("searchForm").scrollIntoView({block: "start", inline: "nearest"});
   }
 
 

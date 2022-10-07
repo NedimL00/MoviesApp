@@ -50,7 +50,7 @@ ul, li, a, button, input {
 }
 
 .container {
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   background-color: var(--bg-color);
   padding-top: 100px;
@@ -132,3 +132,30 @@ width: 500px;
 font-weight: 300;
 overflow: hidden;
 }
+
+.spinnerContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.moviesSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

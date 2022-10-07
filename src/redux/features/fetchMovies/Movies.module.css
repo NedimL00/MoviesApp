@@ -1,9 +1,39 @@
 @import url(../../../colors.css);
 
 .movieContainer {
-  margin-top: 30px;
+  margin-top: 120px;
   padding: 50px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
   justify-items: center;
+}
+@media only screen and (max-width: 790px) {
+  .movieContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 790px) {
+  .movieContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 1180px) {
+  .movieContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 1450px) {
+  .movieContainer {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media only screen and (min-width: 1800px) {
+  .movieContainer {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

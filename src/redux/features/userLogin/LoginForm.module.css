@@ -2,15 +2,15 @@
 
 .flexBox {
   width: 100vw;
-  height: 700px;
+  height: 600px;
   display: flex;
   justify-content: space-between;
 }
 
 .rightSideForm {
-  width: 50%;
+  width: 70%;
   height: 100%;
-  padding-left: 100px;
+  padding-left: 50px;
   border-left: 1px solid var(--clr-gold);
 }
 
@@ -30,6 +30,7 @@
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
+  border: 2px solid var(--clr-gold);
 }
 
 .loginFormWrapper h2 {
@@ -141,4 +142,13 @@
 
 .icon {
   vertical-align: middle;
+}
+
+@media (max-width: 1000px) {
+  .flexBox {
+    display: block;
+  }
+  .rightSideForm {
+    display: none;
+  }
 }

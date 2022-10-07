@@ -3,7 +3,7 @@ import spinner from './Spinner.svg'
 
 function Spinner() {
   return (
-    <div>
+    <div className='container spinnerContainer'>
       <img src={spinner} alt="Spinner" />
     </div>
   )

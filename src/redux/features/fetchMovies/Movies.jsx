@@ -13,10 +13,7 @@ function Movies() {
 
   console.log(movies)
 
-  if(status === 'loading') {
-    return <Spinner/>
-  }
- else if(status === 'succeeded') {
+if(status === 'succeeded') {
   if(movies.length !== 0) {
     return (
       <div className={styles.movieContainer}>

@@ -2,25 +2,25 @@ import React from 'react'
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom'
-import { clearMovieState, fetchMovieInfo, selectMovieByID } from '../../../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
-import Footer from '../Footer/Footer';
-import Navbar from '../Navbar/Navbar';
+import { fetchMovieInfo, getMovieStatus, selectMovieByID } from '../../../redux/features/fetchMovieInfo/fetchMovieInfoSlice';
 import styles from './MovieInfo.module.css';
+import Spinner from '../../assets/Spinner'
 
 function MovieInfo() {
 
   const {movieID} = useParams();
   const dispatch = useDispatch();
   const movie = useSelector(selectMovieByID);
+  const status = useSelector(getMovieStatus);
 
   useEffect(()=>{
-    dispatch(clearMovieState())
-    console.log(movie)
+    console.log(status);
     window.scrollTo(0, 0);
     dispatch(fetchMovieInfo(movieID));
-  },[movieID])
+  },[])
 
-  return (
+  if(status === "succeeded") {
+    return(
     <>
     <div className={'container'}>
       { movie && (
@@ -55,11 +55,18 @@ function MovieInfo() {
           
         </div>
       
-)}
-</div>
+        )}
+        </div>
     </>
 
   )
+  }
+    else if (status === "loading"){
+      return (
+        <Spinner/>
+       )     
+    }
+
 }
 
 

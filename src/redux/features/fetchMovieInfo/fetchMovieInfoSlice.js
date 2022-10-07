@@ -27,11 +27,6 @@ export const fetchMovieInfo = createAsyncThunk('movies/fetchMovieInfo', async(id
 export const movieInfoSlice = createSlice({
   name: 'fetchMovieInfo',
   initialState,
-  reducers: {
-    clearMovieState:(state) => {
-      state = {};
-    }
-  },
   extraReducers(builder) {
     builder 
       .addCase(fetchMovieInfo.pending, (state) => {
@@ -56,6 +51,5 @@ export const movieInfoSlice = createSlice({
 
 export const {clearMovieState} = movieInfoSlice.actions;
 export const selectMovieByID = (state) => state.fetchMovieInfo.movie;
-
-export const selectMovieById = (state)=>state.movie;
+export const getMovieStatus = (state) => state.fetchMovieInfo.status
 export default movieInfoSlice.reducer;

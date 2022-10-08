@@ -95,6 +95,7 @@ function Navbar() {
           </div>
 
         <div style={sidebarStyle} className={styles.linksSidebar}>
+          <FaWindowClose onClick={()=>setClicked(!clicked)} className={styles.closeSidebarIcon} />
           <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/" >Home</Link></span>
           <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/about" >About</Link></span>
           <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/login" >Sign In</Link></span>

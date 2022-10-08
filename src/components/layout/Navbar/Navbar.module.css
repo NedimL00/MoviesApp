@@ -1,105 +1,44 @@
-@import url(../../../colors.css);
+@import url('../../../colors.css');
 
 .navbar {
-  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
-  height: 3em;
-  padding: 0 100px;
-  z-index: 999;
-  font-size: 1.2em;
-  -webkit-user-select: none;  /* Chrome all / Safari all */
-  -moz-user-select: none;     /* Firefox all */
-  -ms-user-select: none; 
-
+  height: 4rem;
+  padding: 0 4rem;
 }
 
 .navbarLogo {
   height: 100%;
-}
-.navbarLogo > a {
-  color: var(--text-primary);
+  font-size: 2.5rem;
 }
 
 .navbarLogoIcon {
+  fill: var(--clr-white);
   height: 100%;
-  font-size: 2em;
+  vertical-align: middle;
 }
 
-.navbarLinks {
+.iconsHolder {
+  height: 100%;
   display: flex;
   align-items: center;
-  height: 100%;
 }
-.navbarLinks a {
-  color: var(--clr-white);
+
+.mainIcon {
+  padding: 0 2rem;
   display: flex;
   align-items: center;
-  height: 100%;
+  height: 2rem;
 }
 
-.navbarLinks li {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  color: var(--text-primary);
-  margin: 0 20px;
-}
-
-.navbarLinks li:hover {
-  cursor: pointer;
-}
-
-.profilePic {
-  height: 3rem;
-  border-radius: 999px;
-}
-
-.accountNameDropdown {
-  position: absolute;
-  top: 3rem;
-  right:0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  padding-right: 100px;
-  text-align: right;
-  height: 100%;
-  width: 100%;
-}
-
-.accountNameDropdownHidden {
+.linksSidebar {
   display: none;
 }
 
-.themeIcon:hover {
-  cursor: pointer;
+.themeIcon {
+  font-size: 1.5rem;
+  vertical-align: middle;
 }
 
-.hamburgerIcon {
-  display: none;
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (max-width: 600px) {
-  .navbarLinks :not(:where(.hamburgerIcon, .themeIcon)) {
-    display: none;
-  }
-}
-@media only screen and (min-width: 600px) {
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}

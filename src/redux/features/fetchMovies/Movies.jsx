@@ -25,7 +25,7 @@ if(status === 'succeeded') {
   }
 
 }  else if (status === 'failed') {
-  return (window.alert(error))
+  return (window.alert(error));
 }
 
 }

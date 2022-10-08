@@ -5,17 +5,21 @@
   padding: 50px;
   display: grid;
   justify-items: center;
+  width: 100%;
 }
-@media only screen and (max-width: 790px) {
+
+
+@media only screen and (max-width: 600px) {
   .movieContainer {
-    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem 0;
+    grid-template-columns: repeat(1, 100%);
   }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 790px) {
   .movieContainer {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 50%);
   }
 }
 

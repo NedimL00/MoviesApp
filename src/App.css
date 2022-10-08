@@ -69,7 +69,7 @@ ul, li, a, button, input {
 }
 
 .frontPageMoviePoster {
-  margin-top: -160px;
+  margin-top: -11rem;
   background-image: var(--poster-image);
   background-size: cover;
   background-position: left;
@@ -86,7 +86,7 @@ ul, li, a, button, input {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  width: 100%;
+  max-width: 100%;
 }
 .frontPageRating {
   color: var(--clr-gold);
@@ -129,9 +129,13 @@ margin-right: 10px;
 
 .frontPagePlot {
 min-width: 300px;
+max-height: 200px;
 width: 500px;
 font-weight: 300;
 overflow: hidden;
+text-overflow: ellipsis;
+-webkit-line-clamp: 4;
+-webkit-box-orient: vertical;
 }
 
 .spinnerContainer {
@@ -148,6 +152,14 @@ overflow: hidden;
   flex-direction: column;
 }
 @media only screen and (max-width: 600px) {
+
+  #root {
+    font-size: 0.8rem;
+  }
+
+  .frontPageMovieData {
+    padding: 3rem 0.8rem ;
+  }
   .frontPageMoviePoster {
     width: 100vw;
   }

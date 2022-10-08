@@ -12,7 +12,6 @@ import { useEffect } from 'react';
 
 function Navbar() {
 
-  const [clicked, setClicked] = useState(true);
   const [dark, setDark] = useState(false);
   const [style, setStyle] = useState();
 
@@ -58,33 +57,31 @@ function Navbar() {
     return (
       <header style={style} className={`${styles.navbar}`}>
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
-        <ul className={styles.navbarLinks} >
+          
+          <div className={styles.iconsHolder}>
+            <span className={`${styles.mainIcon}`}>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</span>
+            <span className={`${styles.mainIcon}`} ><FaBars/></span>
+          </div>
 
-          <li className={styles.hamburgerIcon} ><FaBars/></li>
-          <li>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</li>
-          <li><Link to="/" >Home</Link></li>
-          <li onClick={scrollToSearch}>Search</li>
-          <li onClick={()=>setClicked(!clicked)}>
-            {user?.displayName.split(' ')[0]}
-            {clicked ? <IoMdArrowDropleft/> : <IoMdArrowDropdown/> }
-          </li>
-          <ul style={style} className={!clicked ? styles.accountNameDropdown : styles.accountNameDropdownHidden } >
-              <li><Link to="/dashboard">Dashboard</Link></li>
-              <li onClick={handleLogout}>Logout</li>
-          </ul>
 
-        </ul>
+        <div className={styles.linksSidebar}>
+          <span className={styles.linkItem}><Link to="/" >Home</Link></span>
+          <span className={styles.linkItem}><Link to="/about" >About</Link></span>
+          <span className={styles.linkItem}><Link to="/dashboard">My Profile</Link></span>
+          <span className={styles.linkItem} onClick={handleLogout}><Link to="/dashboard">Sign Out</Link></span>
+        </div>
+
       </header>
     )
   } else {
     return (
       <header className={styles.navbar}>
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
-        <ul className={styles.navbarLinks} >
-          <Link to="/" ><li>Home</li></Link>
-          <Link to="/" ><li>About</li></Link>
-          <Link to="/login" ><li>Login</li></Link>
-        </ul>
+        <div className={styles.linksSidebar}>
+          <span className={styles.linkItem}><Link to="/" >Home</Link></span>
+          <span className={styles.linkItem}><Link to="/about" >About</Link></span>
+          <span className={styles.linkItem}><Link to="/login" >Sign In</Link></span>
+        </div>
       </header>
     )
   }

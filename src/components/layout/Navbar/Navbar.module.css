@@ -3,6 +3,7 @@
 .navbar {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -34,6 +35,7 @@
   height: 100%;
 }
 .navbarLinks a {
+  color: var(--clr-white);
   display: flex;
   align-items: center;
   height: 100%;
@@ -78,3 +80,26 @@
 .themeIcon:hover {
   cursor: pointer;
 }
+
+.hamburgerIcon {
+  display: none;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 600px) {
+  .navbarLinks :not(:where(.hamburgerIcon, .themeIcon)) {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -3,6 +3,7 @@ import styles from './Navbar.module.css';
 import { SiThemoviedatabase } from 'react-icons/si';
 import { IoMdArrowDropleft, IoMdArrowDropdown } from 'react-icons/io';
 import { BiSun, BiMoon } from 'react-icons/bi';
+import { FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser } from '../../../redux/features/userLogin/loginUserSlice';
@@ -59,15 +60,16 @@ function Navbar() {
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
         <ul className={styles.navbarLinks} >
 
+          <li className={styles.hamburgerIcon} ><FaBars/></li>
           <li>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</li>
-          <Link to="/" ><li>Home</li></Link>
+          <li><Link to="/" >Home</Link></li>
           <li onClick={scrollToSearch}>Search</li>
           <li onClick={()=>setClicked(!clicked)}>
             {user?.displayName.split(' ')[0]}
             {clicked ? <IoMdArrowDropleft/> : <IoMdArrowDropdown/> }
           </li>
           <ul style={style} className={!clicked ? styles.accountNameDropdown : styles.accountNameDropdownHidden } >
-              <Link to='/dashboard'><li>Dashboard</li></Link>
+              <li><Link to="/dashboard">Dashboard</Link></li>
               <li onClick={handleLogout}>Logout</li>
           </ul>
 

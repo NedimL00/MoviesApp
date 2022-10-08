@@ -86,6 +86,7 @@ ul, li, a, button, input {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
 }
 .frontPageRating {
   color: var(--clr-gold);
@@ -146,7 +147,14 @@ overflow: hidden;
   display: flex;
   flex-direction: column;
 }
-@media only screen and (max-width: 600px) {}
+@media only screen and (max-width: 600px) {
+  .frontPageMoviePoster {
+    width: 100vw;
+  }
+  .frontPagePlot {
+    max-width: 200px;
+  }
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {}

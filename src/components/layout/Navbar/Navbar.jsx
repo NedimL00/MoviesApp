@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styles from './Navbar.module.css';
 import { SiThemoviedatabase } from 'react-icons/si';
-import { IoMdArrowDropleft, IoMdArrowDropdown } from 'react-icons/io';
 import { BiSun, BiMoon } from 'react-icons/bi';
-import { FaBars } from 'react-icons/fa';
+import { FaBars, FaWindowClose } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser } from '../../../redux/features/userLogin/loginUserSlice';
@@ -12,8 +11,10 @@ import { useEffect } from 'react';
 
 function Navbar() {
 
+  const [clicked, setClicked] = useState(false);
   const [dark, setDark] = useState(false);
   const [style, setStyle] = useState();
+  const [sidebarStyle, setSidebarStyle] = useState();
 
 
   const dispatch = useDispatch();
@@ -48,9 +49,18 @@ function Navbar() {
     setDark(!dark);
   } 
 
-  const scrollToSearch = ()=>{
-    document.getElementById("searchForm").scrollIntoView({block: "start", inline: "nearest"});
-  }
+  useEffect(()=>{
+    if(!clicked) {
+      setSidebarStyle({display:"none"});
+      document.body.style.overflow = 'unset';
+    }
+    else {
+      setSidebarStyle();
+      document.body.style.overflow = 'hidden';
+    }
+  },[clicked])
+
+
 
 
   if (user) {
@@ -60,15 +70,16 @@ function Navbar() {
           
           <div className={styles.iconsHolder}>
             <span className={`${styles.mainIcon}`}>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</span>
-            <span className={`${styles.mainIcon}`} ><FaBars/></span>
+            <span className={`${styles.mainIcon}`} onClick={()=>setClicked(!clicked)}><FaBars/></span>
           </div>
 
 
-        <div className={styles.linksSidebar}>
-          <span className={styles.linkItem}><Link to="/" >Home</Link></span>
-          <span className={styles.linkItem}><Link to="/about" >About</Link></span>
-          <span className={styles.linkItem}><Link to="/dashboard">My Profile</Link></span>
-          <span className={styles.linkItem} onClick={handleLogout}><Link to="/dashboard">Sign Out</Link></span>
+        <div style={sidebarStyle} className={styles.linksSidebar}>
+          <FaWindowClose onClick={()=>setClicked(!clicked)} className={styles.closeSidebarIcon} />
+          <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/" >Home</Link></span>
+          <span onClick={()=>setClicked(!clicked)}  className={styles.linkItem}><Link to="/about" >About</Link></span>
+          <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/dashboard">My Profile</Link></span>
+          <span onClick={()=>{setClicked(!clicked); handleLogout()}} className={styles.linkItem}><Link to="/dashboard">Sign Out</Link></span>
         </div>
 
       </header>
@@ -77,10 +88,16 @@ function Navbar() {
     return (
       <header className={styles.navbar}>
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
-        <div className={styles.linksSidebar}>
-          <span className={styles.linkItem}><Link to="/" >Home</Link></span>
-          <span className={styles.linkItem}><Link to="/about" >About</Link></span>
-          <span className={styles.linkItem}><Link to="/login" >Sign In</Link></span>
+
+        <div className={styles.iconsHolder}>
+            <span className={`${styles.mainIcon}`}>{dark ? <BiSun className={styles.themeIcon} onClick={handleTheme} /> : <BiMoon className={styles.themeIcon} onClick={handleTheme} />}</span>
+            <span className={`${styles.mainIcon}`} onClick={()=>setClicked(!clicked)}><FaBars/></span>
+          </div>
+
+        <div style={sidebarStyle} className={styles.linksSidebar}>
+          <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/" >Home</Link></span>
+          <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/about" >About</Link></span>
+          <span onClick={()=>setClicked(!clicked)} className={styles.linkItem}><Link to="/login" >Sign In</Link></span>
         </div>
       </header>
     )

@@ -49,6 +49,7 @@ function LoginForm() {
           displayName: userAuth.user.displayName,
           photoUrl: userAuth.user.photoURL,
         }))
+        navigate('/')
       }) .catch ((err)=>{
         const errorCode = err.code;
         const errorMessage=err.message;

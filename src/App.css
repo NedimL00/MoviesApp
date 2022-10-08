@@ -157,14 +157,18 @@ text-overflow: ellipsis;
     font-size: 0.8rem;
   }
 
+  .frontPageMoviePoster {
+    height: 60vh;
+  }
+
   .frontPageMovieData {
-    padding: 3rem 0.8rem ;
+    padding: 3rem 0.rem ;
   }
   .frontPageMoviePoster {
     width: 100vw;
   }
   .frontPagePlot {
-    max-width: 200px;
+    max-width: 100%;
   }
 }
 

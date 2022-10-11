@@ -25,12 +25,13 @@
   flex-basis: 400px;
   margin: 50px auto;
   width: 60%;
-  background-color: var(--clr-primary-40);
+  background-color: var(--clr-secondary);
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  border: 2px solid var(--clr-secondary);
+  border: 2px solid var(--clr-primary-80);
+  color: var(--clr-primary);
 }
 
 .loginFormWrapper h2 {
@@ -49,18 +50,24 @@
   width: 95%;
   height: 42px;
   margin-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 10px;
   text-align: center;
   font: 1rem sans-serif;
   font-weight: 700;
   color: var(--clr-gray);
   margin-bottom: 2rem;
-  background-color: var(--clr-secondary-100);
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
 }
+
+
 
 .label {
   order: -1;
-  color: var(--clr-secondary-60);
+  color: var(--clr-secondary);
+  opacity: 0.4;
   position: absolute;
 }
 
@@ -73,12 +80,13 @@
   top: 82px;
   left: 20px;
 }
-.input:focus {
-  border: 1px solid var(--clr-primary);
 
+.input:focus {
+  border: 1px solid var(--clr-secondary);
 }
 
 .input:focus + label[for="email"] {
+  opacity: 1;
   background-color: var(--clr-primary);
   color: var(--clr-secondary);
   font-size: 0.6rem;
@@ -89,6 +97,7 @@
 }
 
 .input:focus + .label[for="password"] {
+  opacity: 1;
   background-color: var(--clr-primary);
   color: var(--clr-secondary);
   font-size: 0.6rem;
@@ -109,13 +118,15 @@
   background-color: var(--clr-secondary-100);
   font: 1rem sans-serif;
   font-weight: 700;
+  color: var(--clr-primary);
+  border: 1px solid transparent;
 }
 
 .registerButton {
-  background-color: var(--clr-primary-40);
-  color: var(--clr-primary);
+  background-color: var(--clr-secondary-100);
   font: 1rem sans-serif;
   font-weight: 700;
+  color: var(--clr-primary);
 }
 
 .button:hover {
@@ -135,7 +146,7 @@
 .btnSpan {
   position: relative;
   top: 9px;
-  background-color: var(--clr-primary-40);
+  background-color: var(--clr-secondary);
   font-size: 0.8rem;
   padding: 0 5px;
 }

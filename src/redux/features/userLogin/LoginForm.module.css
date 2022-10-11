@@ -1,10 +1,11 @@
 @import url(../../../colors.css);
 
 .flexBox {
-  width: 100vw;
+  width: 100%;
   height: 600px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .rightSideForm {
@@ -12,19 +13,22 @@
   height: 100%;
   padding-left: 50px;
   border-left: 1px solid var(--clr-gold);
+  display: flex;
+  align-items: center;
 }
 
 .rightSideForm > img {
   height: 100%;
-  object-fit: contain;
+  width: 100%;
+  object-fit: cover;
 }
 
 .loginFormWrapper {
   max-height: 500px;
   padding: 60px;
-  flex-basis: 400px;
   margin: 50px auto;
   width: 60%;
+  max-width: 400px;
   background-color: var(--clr-secondary);
   display: flex;
   flex-direction: column;
@@ -155,9 +159,9 @@
   vertical-align: middle;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1440px) {
   .flexBox {
-    display: block;
+    display: unset;
   }
   .rightSideForm {
     display: none;

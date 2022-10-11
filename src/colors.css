@@ -1,31 +1,36 @@
 :root {
-  --bg-color:#0F1322;
-    --navbar-bg-color: rgba(51,51,51,0.9);
-  --footer-bg-color: #0e1018;
-  --form-bg-color: #E63946;
-  --text-primary: #fff;
-  --text-secondary: #000;
-  --btn-primary: #457B9D;
-  --btn-secondary: #A8DADC;
-  --btn-warning: #E63946;
-  --login-btn: #fff;
-  --registration-btn: #42B72A;
 
 
-  --clr-gold: #ffc45e;
-  --clr-gray: #81807f;
-  --clr-white: #e8e8e8;
-  --clr-black: #050505;
-  --clr-darkBlue: #0F1322;
-  --clr-lightBlue: #95CFD9;
-  --clr-beige: #DABDA9;
-  --clr-blue: #3C4F76;
 
+  --clr-primary: #FFFFFF;
+  --clr-primary-20: #0084FF;
+  --clr-primary-40: #1272CC;
+  --clr-primary-60: #004F99;
+  --clr-primary-80: #003566;
 
-  --poster-image: url('./components/assets/Interstellar.jpg');
+  --clr-secondary: #F98600;
+  --clr-secondary-20: #C76B00;
+  --clr-secondary-40: #975000;
+  --clr-secondary-60: #955000;
+  --clr-secondary-80: #643600;
+  --clr-secondary-100: #000000;
+
+  --poster-image: url('./components/assets/Interstellar-light.jpg');
+transition: all .2s;
 }
 
 .dark-mode {
-
+  --clr-primary: #121212;
+  --clr-primary-20: #168FFF;
+  --clr-primary-40: #45A5FF;
+  --clr-primary-60: #73BCFF;
+  --clr-primary-80: #A2D2FF;
+  --clr-secondary: #FF9F2D;
+  --clr-secondary-20: #FFB257;
+  --clr-secondary-40: #FFC581;
+  --clr-secondary-60: #fbeddd;
+  --clr-secondary-80: #FFD9AB;
+  --clr-secondary-100: #ffffff;
+  --poster-image: url('./components/assets/Interstellar.jpg');
   transition: all .2s;
 }

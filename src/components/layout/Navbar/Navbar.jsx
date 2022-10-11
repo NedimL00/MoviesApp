@@ -25,23 +25,12 @@ function Navbar() {
     dispatch(logout());
     auth.signOut();
   }
-  const handleScroll = () => {
-    if(window.scrollY > 20) {
-      setStyle({backgroundColor:"var(--bg-color)"});
-    } else {
-      setStyle()
-    }
-  }
-  
+
   useEffect(()=>{
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
       setDark(true);
     }
 
-    window.addEventListener('scroll', handleScroll);
-    return ()=> {
-      window.removeEventListener('scroll', handleScroll)
-    }
   },[])
 
   const handleTheme = ()=>{

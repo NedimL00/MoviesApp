@@ -5,9 +5,9 @@
   margin-inline: auto;
   height: 600px;
   width: min(80vw,900px);
-  background-color: #fff;
+  background-color: var(--clr-primary-20);
   border-radius: 25px;
-  color: var(--clr-black);
+  color: var(--clr-primary);
   display: flex;
 }
 
@@ -33,12 +33,18 @@
 .leftProfile span {
   text-align: center;
   font-size: 0.8rem;
-  color: var(--clr-gray);
+  color: var(--clr-primary);
 }
 
 .leftSideLinks {
   margin: 2rem 0;
   font-size: 1rem;
+}
+
+.leftSideLinks * {
+  color: var(--clr-primary);
+  fill: var(--clr-primary);
+  stroke: var(--clr-primary);
 }
 
 .leftSideLinks ul li:hover {
@@ -64,7 +70,7 @@
   padding: 20px;
   height: 100%;
   width: 80%;
-  background-color: #F3F1EF;
+  background-color: var(--clr-secondary-60);
   border-radius: 25px;
   display: grid;
   grid-template-columns: 40% 60%;
@@ -78,31 +84,30 @@
 
 
 .likedMovies {
-  color: var(--clr-gold);
+  color: var(--clr-primary);
   padding: 10px;
   height: 300px;
   width: 100%;
-  background-color: var(--clr-darkBlue);
+  background-color: var(--clr-primary-40);
   border-radius: 10px;
 }
 .watchLater {
-  color: var(--clr-darkBlue);
+  color: var(--clr-primary);
   padding: 10px;
   height: 300px;
   width: 100%;
-  background-color: var(--clr-lightBlue);
+  background-color: var(--clr-secondary-20);
   border-radius: 10px;
 }
 
 
 .engagementCard {
-  color: var(--clr-darkBlue);
+  color: var(--clr-secondary);
   padding: 10px;
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column: span 2;
   width: 100%;
-  height: 90%;
-  background-color: var(--clr-beige);
+  height: 100%;
+  background-color: var(--clr-primary);
   border-radius: 10px;
 }
 .likedMoviesFrame {
@@ -114,14 +119,14 @@
 .likedMovieCard {
   width: 90%;
   height: 56px;
-  background-color: var(--clr-white);
+  background-color: var(--clr-primary-60);
   margin: 5px 0;
   padding: 10px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: var(--clr-darkBlue);
+  color: var(--clr-primary);
 }
 .likedMovieCard span {
   font-size: 0.8rem;

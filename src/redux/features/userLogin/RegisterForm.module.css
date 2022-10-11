@@ -37,14 +37,14 @@
   text-align: center;
   font: 1rem sans-serif;
   font-weight: 700;
-  color: var(--clr-gray);
+  color: var(--clr-primary-40);
   margin-bottom: 2rem;
-  background-color: var(--clr-white);
+  background-color: var(--clr-secondary-100);
 }
 
 .label {
   order: -1;
-  color: var(--clr-gray);
+  color: var(--clr-primary-40);
   position: absolute;
 }
 
@@ -58,13 +58,13 @@
   left: 20px;
 }
 .input:focus {
-  border: 1px solid var(--clr-darkBlue);
+  border: 1px solid var(--clr-primary);
 
 }
 
 .input:focus + label[for="email"] {
-  background-color: var(--clr-darkBlue);
-  color: var(--clr-gold);
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
   font-size: 0.6rem;
   padding: 5px;
   top: -12px;
@@ -73,8 +73,8 @@
 }
 
 .input:focus + .label[for="password"] {
-  background-color: var(--clr-darkBlue);
-  color: var(--clr-gold);
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
   font-size: 0.6rem;
   padding: 5px;
   top: 60px;
@@ -89,7 +89,7 @@
 }
 
 .loginButton {
-  background-color: var(--clr-white);
+  background-color: var(--clr-secondary-100);
   font: 1rem sans-serif;
   font-weight: 700;
 }
@@ -99,11 +99,11 @@
 }
 
 .button:active {
-  border: 1px solid var(--clr-gold);
+  border: 1px solid var(--clr-secondary);
   transition: all .2s;
 }
 
 .decorationLine {
   width: 85%;
-  border-bottom: 1px solid var(--clr-white);
+  border-bottom: 1px solid var(--clr-secondary);
 }

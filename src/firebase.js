@@ -3,13 +3,13 @@ import {getAuth, createUserWithEmailAndPassword, updateProfile, onAuthStateChang
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBG6sxV7no6FOs_TalMNl9pi1gUl8EKn9Y",
-  authDomain: "movie-app-project-e0778.firebaseapp.com",
-  projectId: "movie-app-project-e0778",
-  storageBucket: "movie-app-project-e0778.appspot.com",
-  messagingSenderId: "396624478685",
-  appId: "1:396624478685:web:d67bb1e62dc08d5d607634",
-  measurementId: "G-5FWB2KS899"
+  apiKey: process.env.REACT_APP_API_KEY_FIREBASE,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
+  measurementId: process.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase

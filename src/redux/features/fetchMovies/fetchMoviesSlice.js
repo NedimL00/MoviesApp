@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_MOVIE_API_KEY;
+
 
 const initialState = {
   movies: {},
@@ -13,7 +15,7 @@ export const fetchMovies = createAsyncThunk('movies/fetchMovies', async(text)=>{
   try {
     const response = await axios.get('https://www.omdbapi.com/', {
       params: {
-        apikey: 'dd117956',
+        apikey: API_KEY,
         s: text.toLowerCase().split(' ').join('+'),
         type: 'movie',
       }

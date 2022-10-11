@@ -14,7 +14,7 @@ function Movies() {
   console.log(movies)
 
 if(status === 'succeeded') {
-  if(movies.length !== 0) {
+  if(movies?.length !== 0) {
     return (
       <div className={styles.movieContainer}>
         {movies.map((movie) => 

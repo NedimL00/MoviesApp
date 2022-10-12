@@ -21,18 +21,14 @@ function RegisterForm() {
 
     createUserWithEmailAndPassword(auth, email, password)
     .then((userAuth) => {
-      updateProfile(userAuth.user, {
-        displayName: name,
-      })
-      .then (
         dispatch(login({
           email: userAuth.user.email,
           uid: userAuth.user.uid,
           displayName: name,
-        }))) 
+        }))
     })
     .catch((error) => {
-      console.log('User not registered');
+      console.log('User not registered', error);
     })
   }
   

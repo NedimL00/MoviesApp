@@ -70,9 +70,9 @@ function LoginForm() {
         <div className={styles.loginFormWrapper}>
           <h2>Hello Again!</h2>
           <form className={styles.loginForm} onSubmit={(e)=>handleLogin(e)}>
-            <input className={styles.input} type='email' onChange={(e)=>setEmail(e.target.value)} />
+            <input placeholder=' ' className={styles.input} type='email' onChange={(e)=>setEmail(e.target.value)} />
             <label className={styles.label} htmlFor="email">Email</label>
-            <input className={styles.input} type='password' onChange={(e)=>setPassword(e.target.value)} />
+            <input placeholder=' ' className={styles.input} type='password' onChange={(e)=>setPassword(e.target.value)} />
             <label className={styles.label} htmlFor="password">Password</label>
             <button type='submit' className={`${styles.button} ${styles.loginButton}`} >Log In To Movies App</button>
             <span className={styles.btnSpan}>or</span>

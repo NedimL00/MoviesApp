@@ -21,7 +21,6 @@ function Home() {
     document.title = 'Home';
     dispatch(fetchMovieInfo(movieID));
   },[])
-  console.log(movie);
 
   
 

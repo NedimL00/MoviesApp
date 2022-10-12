@@ -13,7 +13,6 @@ function Dashboard() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const user = useSelector(selectUser);
-  console.log(user);
 
   useEffect(()=>{
     if(user) {

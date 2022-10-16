@@ -57,7 +57,6 @@
   padding-left: 10px;
   padding-right: 10px;
   border-radius: 10px;
-  text-align: center;
   font: 1rem sans-serif;
   font-weight: 700;
   color: var(--clr-gray);
@@ -100,6 +99,17 @@
   transition: all .4s;
 }
 
+.input:not(:placeholder-shown) + .label[for="email"] {
+  opacity: 1;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  font-size: 0.6rem;
+  padding: 5px;
+  top: -12px;
+  border-radius: 5px;
+  transition: all .4s;
+}
+
 .input:focus + .label[for="password"] {
   opacity: 1;
   background-color: var(--clr-primary);
@@ -110,6 +120,18 @@
   border-radius: 5px;
   transition: all .4s;
 }
+.input:not(:placeholder-shown) + .label[for="password"] {
+  opacity: 1;
+  background-color: var(--clr-primary);
+  color: var(--clr-secondary);
+  font-size: 0.6rem;
+  padding: 5px;
+  top: 60px;
+  border-radius: 5px;
+  transition: all .4s;
+}
+
+
 
 .button {
   padding: 1em;
@@ -157,6 +179,13 @@
 
 .icon {
   vertical-align: middle;
+}
+
+
+@media only screen and (max-width:600px) {
+  .loginFormWrapper{
+    padding: 60px 10px;
+  }
 }
 
 @media (max-width: 1440px) {

@@ -3,7 +3,7 @@ import styles from './Navbar.module.css';
 import { SiThemoviedatabase } from 'react-icons/si';
 import { BiSun, BiMoon } from 'react-icons/bi';
 import { FaBars, FaWindowClose } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logout, selectUser } from '../../../redux/features/userLogin/loginUserSlice';
 import { auth } from '../../../firebase';
@@ -11,9 +11,9 @@ import { useEffect } from 'react';
 
 function Navbar() {
 
+  const navigate = useNavigate()
   const [clicked, setClicked] = useState(false);
   const [dark, setDark] = useState(false);
-  const [style, setStyle] = useState();
   const [sidebarStyle, setSidebarStyle] = useState();
 
 
@@ -24,6 +24,10 @@ function Navbar() {
   const handleLogout = () => {
     dispatch(logout());
     auth.signOut();
+    setTimeout(()=>{
+      navigate('/');
+    },2000)
+
   }
 
   useEffect(()=>{
@@ -54,7 +58,7 @@ function Navbar() {
 
   if (user) {
     return (
-      <header style={style} className={`${styles.navbar}`}>
+      <header className={`${styles.navbar}`}>
         <div className={styles.navbarLogo}><Link to='/'><SiThemoviedatabase className={styles.navbarLogoIcon}/></Link></div>
           
           <div className={styles.iconsHolder}>

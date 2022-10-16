@@ -13,7 +13,6 @@ function Dashboard() {
   const dispatch = useDispatch();
   const navigate = useNavigate()
   const user = useSelector(selectUser);
-  console.log(user);
 
   useEffect(()=>{
     if(user) {
@@ -29,6 +28,7 @@ function Dashboard() {
     navigate('/');
   }
 
+
   if(user !== null) {
     return (
       <>
@@ -37,7 +37,7 @@ function Dashboard() {
               <div className={styles.leftSide}>
                 <h3>My Profile</h3>
                   <div className={styles.leftProfile}>
-                    <img src={user?.photoUrl} />
+                    <img src={user.photoUrl} referrerpolicy="no-referrer" />
                     <span>{user?.displayName}</span>
                   </div>
                   <div className={styles.leftSideLinks}>

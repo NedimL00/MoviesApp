@@ -139,6 +139,7 @@
     height: 100%;
   }
   .leftSide {
+    flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
     height: 20%;
@@ -161,6 +162,12 @@
     height: 220px;
     padding-bottom: 15px;
   }
+  .likedMovieCard {
+    height: 80px;
+  }
+  .likedMovieCard h5 {
+    font-size: large;
+  }
   .watchLater{
     height: 300px;
   }
@@ -169,20 +176,3 @@
   }
 }
 
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 790px) {
-
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 1180px) {
-
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 1450px) {
-
-}
-@media only screen and (min-width: 1800px) {
-
-}

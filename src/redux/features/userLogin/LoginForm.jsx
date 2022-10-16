@@ -36,7 +36,7 @@ function LoginForm() {
           navigate('/')
       })
       .catch((err)=>{
-        alert(err)
+        console.log(err);
       })
   }
 

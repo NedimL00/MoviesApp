@@ -79,7 +79,10 @@ ul, li, a, button, input {
   flex-direction: column;
   align-items: flex-start;
 }
+
+
 .frontPageMovieData {
+  opacity: 0;
   margin-top: 6em;
   height: 100%;
   padding: 5em;
@@ -87,7 +90,21 @@ ul, li, a, button, input {
   flex-direction: column;
   overflow: hidden;
   max-width: 100%;
+  animation: textIn .5s .7s ease-in forwards;
 }
+
+@keyframes textIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 .frontPageRating {
   color: var(--clr-primary-40);
   font-weight: 700;

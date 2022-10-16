@@ -38,7 +38,10 @@ function LoginForm() {
       .catch((err)=>{
         if(err.code === "auth/user-not-found") {
           alert('User not found!');
+        } else {
+          alert(err.code);
         }
+
       })
   }
 
